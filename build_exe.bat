@@ -9,9 +9,9 @@ echo.
 REM 가상 환경 활성화
 call venv\Scripts\activate.bat
 
-REM PyInstaller 설치 확인 및 설치
-echo PyInstaller 설치 확인 중...
-pip install pyinstaller --quiet
+REM PyInstaller 및 앱 의존성 설치
+echo PyInstaller 및 의존성 설치 확인 중...
+pip install pyinstaller PyQt6 python-pptx --quiet
 
 echo.
 echo exe 파일 빌드 시작...
