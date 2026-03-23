@@ -177,8 +177,9 @@ def table_to_markdown(table):
     separator = "| " + " | ".join(["---"] * len(headers)) + " |"
     lines.append(separator)
     
-    # Process data rows
-    for row in table.rows[1:]:
+    # Process data rows (rows does not support slice indexing in python-pptx)
+    for row_idx in range(1, len(table.rows)):
+        row = table.rows[row_idx]
         cells = []
         for cell in row.cells:
             cell_text = cell.text.strip().replace("|", "\\|").replace("\n", "<br>")
